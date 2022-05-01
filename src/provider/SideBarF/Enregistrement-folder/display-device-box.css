@@ -1,0 +1,12 @@
+.display-device-box{
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: row;
+}
+.device-box{
+    width:250px ;
+    height:200px;
+    background-color: #878787;
+    margin: 2rem;
+}

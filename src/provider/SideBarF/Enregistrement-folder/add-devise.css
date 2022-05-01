@@ -1,0 +1,12 @@
+.box{
+width: 30%;
+height: 60%;
+background-color: #878787;
+
+}
+.localisation{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+
+}

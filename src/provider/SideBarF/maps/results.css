@@ -1,0 +1,16 @@
+.result{
+    width: 25%;
+    height: 85vh;
+    background-color: #878787;
+    margin-left: 20px;
+}
+.research-title{
+    width: 7vw;
+    height: 5vh;
+    background-color: #C4C4C4;
+    margin-left: 9rem;
+    margin-top: 10px;
+    padding-left: 25px;
+    padding-top: 5px;
+    font-family: bold;
+}

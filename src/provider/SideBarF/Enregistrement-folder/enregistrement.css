@@ -1,0 +1,13 @@
+.enregistrement{
+    background-color:#C4C4C4;
+    height: 90vh;
+}
+.nodevice{
+height: 100%;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}

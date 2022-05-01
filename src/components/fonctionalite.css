@@ -1,0 +1,40 @@
+.fonc{
+    width: 100%;
+    height: 30vh;
+    background-color:#C4C4C4;
+    display: flex;
+    flex-direction: row;
+}
+.service-bloc{
+    margin-top: 10px;
+    }
+.csaas{
+    width: 45%;
+    height: 28vh;
+    background-color: #656060;
+    justify-content: flex-start;
+    margin-left: 45px; 
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2{
+    color: aliceblue;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.SaaS{
+    width: 45%;
+    height: 28vh;
+    background-color: #656060;
+    justify-content:flex-end; 
+    margin-left: 30px; 
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+

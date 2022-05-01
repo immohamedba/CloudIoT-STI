@@ -1,0 +1,29 @@
+.nav-auth{
+    width: 100%;
+    background-color: blue;
+}
+
+.nav-bg{
+    background-color:#656060;
+}
+
+.menu{
+    color: #202022;
+}
+.logo-auth{
+    width: 40%;
+    height: 40%;
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    color :#202022;
+}
+a:active{
+    background-color:#00BBC9;
+
+}
+a:hover{
+    background-color:#00BBC9;
+    border: 1px solid #00BBC9;
+  }
