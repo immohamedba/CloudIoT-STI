@@ -12,6 +12,36 @@ const DisplayTable = (props) => {
     const handleClose = () => setShow(false);
     const [newDevice, setNewDevice] = useState([]);
     const [rID, setrID] = useState("");
+    const urlBase = "https://maps.googleapis.com/maps/api/geocode/json?latlng=";
+    const key = "&key=" + process.env.REACT_APP_GOOGLE_API_KEY;
+    //const [lat, setLat] = useState("");
+   // const [lng, setLng] = useState("");
+    const [url, setUrl] = useState("");
+
+    const address = fetch(url)
+        .then((response) =>{var responseClone=response.clone()
+        return responseClone.json();
+        })
+        .then((data) => {
+            console.log(data);
+        })
+        .catch(err => console.log(err.message));
+
+    const getAddress =(lat, lng) => {
+        console.log("lat :"+lat+ " lng :"+lng);
+        let addr =lat + "," + lng;
+        console.log("adress :"+addr);
+        let url =urlBase + addr + key;
+        setUrl(url);
+        console.log(url);
+        address.then((ad)=>{
+            console.log(ad);
+        });
+    };
+    // const addresse = "40.714224,-73.961452";
+    // const refUrl = https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY;
+    // const url = urlBase+addresse+key;
+
 
     const showAddDeviceModal = (device, id) => {
         setNewDevice(device);
@@ -22,6 +52,30 @@ const DisplayTable = (props) => {
     useEffect(() => {
         handleClose();
     }, [])
+    /*
+       function getAdress(lng, lat) {
+           const addr = lng + "," + lat;
+           const url = urlBase + addr + key;
+           const adress = fetch(url)
+               .then(response => response.json())
+               .then(data => {
+                   return data.results[0].formatted_address;
+               })
+               .catch(err => console.log(err.message));
+   
+       }
+   
+       /*const getAdress = (lng , lat) => {
+           const addr = lng + "," + lat;
+           const url = urlBase + addr + key;
+           let response  = await fetch(url);
+           //use string literals
+           let JsonData = await response.json();
+           console.log(JsonData.results[0].formatted_address);
+           return JsonData.results[0].formatted_address;
+           
+          }*/
+
 
     return (
         <div className='display-table'>
@@ -46,9 +100,10 @@ const DisplayTable = (props) => {
                     </thead>
                     <tbody className='body-table'>
                         {props.devises.map((device) => (
+                            
                             <tr>
                                 <td>{device.data.idDevise}</td>
-                                <td>{device.data.localisation}</td>
+                                <td>{()=>{getAddress(device.data.lat, device.data.lng)}}</td>
                                 <td>{device.data.Type}</td>
                                 <td>{device.data.service}</td>
                                 <td>{device.data.status}</td>

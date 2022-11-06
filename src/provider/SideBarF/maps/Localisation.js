@@ -12,6 +12,7 @@ import { useMainContext } from '../../../context/Context';
 
 const Localisation = () => {
   const DevisesCollectioner = collection(db, "devises");
+  
   const [loading, setLoading] = useState(false);
   const [Devices, setDevices] = useState([]);
   const { setDevicesData, setReRenderMarkers } = useMainContext();

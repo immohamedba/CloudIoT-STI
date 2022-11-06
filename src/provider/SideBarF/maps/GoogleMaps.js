@@ -11,6 +11,8 @@ function GoogleMaps({ DeviceData, searchFiltr, SearchFiltr }) {
     const [zoom, setZoom] = useState(10);
     const center = { lat: 33.886917, lng: 9.537499 };
     const [bounds, setBounds] = useState(null);
+    const [selectedDevice, setSelectedDevice] = useState(null);
+
     //Setup Geo-features
     const Devices = DeviceData.map(device => ({
         "properties": {
@@ -26,8 +28,12 @@ function GoogleMaps({ DeviceData, searchFiltr, SearchFiltr }) {
         }
 
     }));
+    const showResulat = (point) => {
+        setSelectedDevice(point);
+        console.log(selectedDevice);
+    }
 
-    console.log(Devices);
+    //  console.log(Devices);
     return (
         <>
             <Search
@@ -63,10 +69,4 @@ function GoogleMaps({ DeviceData, searchFiltr, SearchFiltr }) {
     );
 }
 
-/*GoogleMaps.defaultProps = {
-    center: {
-        lat: 29.305561,
-        lng: -3.981108
-    }
-}*/
 export default GoogleMaps; 
